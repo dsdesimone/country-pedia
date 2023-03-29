@@ -1,0 +1,73 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2C3E50;
+    min-height: 100vh;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+}
+/* Search Button*/
+.country{
+    font-weight: 200;
+    text-decoration: underline;
+}
+.pedia{
+    font-weight: 400;
+    text-decoration:overline;
+}
+.search__button{
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.submit__btn{
+    background-color: #D4E6F1;
+    border-radius: 50%;
+    padding: 0.5rem;
+    font-weight: 600;
+}
+.submit__btn:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+/* Card Country */
+.card__country{
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    margin: 0 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2px;
+}
+.country__name{
+    line-height: 40px;
+    text-align: center;
+}
+.card__country p b{
+    font-weight: 600;
+    font-style: italic;
+}
+.card__country__name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.img__flag{
+    width: 120px;
+    height: 80px;
+}
