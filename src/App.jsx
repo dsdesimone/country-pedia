@@ -3,17 +3,25 @@ import axios from 'axios'
 import CardCountry from './components/CardCountry'
 import { useState, useEffect } from 'react'
 import SearchButton from './components/SearchButton'
+import Error from './components/Error'
  
 function App() {
   
   const [country, setCountry] = useState()
   const [inputValue, setInputValue] = useState('argentina')
+  const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
     const url = `https://restcountries.com/v3.1/name/${inputValue}`
     axios.get(url)
-    .then(res => setCountry(res.data[0]))
-    .catch(err => console.log(err))
+    .then(res => {
+      setCountry(res.data[0])
+      setHasError(false)
+    })
+    .catch(err => {
+      console.log(err)
+      setHasError(true)
+    })
   }, [inputValue])
   
   const handleSubmit = e => {
@@ -24,7 +32,11 @@ function App() {
   return (
     <div className="App">
       <SearchButton handleSubmit={handleSubmit}/>
-      <CardCountry country={country}/>
+      {
+        hasError  
+          ? <Error />
+          : <CardCountry country={country}/>
+      }
     </div>
   )
 }

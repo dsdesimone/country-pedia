@@ -74,3 +74,12 @@ body{
     width: 120px;
     height: 80px;
 }
+/* Error */
+.error__msg{
+    font-size: 22px;
+    background-color: white;
+    color: crimson;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid crimson;
+}
